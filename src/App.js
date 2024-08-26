@@ -1,8 +1,14 @@
-import { useRef } from "react"
+import { useRef,useEffect } from "react"
 
 
 export default function Form() {
   const inputRef = useRef(null)
+
+  useEffect(()=>{
+    if(inputRef.current){
+      inputRef.current.focus()
+    }
+  },[])
 
   const handleClick = (e) =>{
     if(inputRef.current){
